@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Getter
 @NoArgsConstructor
@@ -24,4 +26,9 @@ public class Post {
     private int view_cnt;
 
     private String content;
+
+    private LocalDateTime created_at;
+
+    private LocalDateTime updated_at;
+
 }

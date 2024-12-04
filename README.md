@@ -2,17 +2,11 @@
 SK m&amp;Service 개발 코딩테스트
 당신의 열정 목록 게시판
 
-## ⚒️ 기술 스택
-
-## 🖥️ Client
+## 기술 스택
 
 [![Client Skills](https://skillicons.dev/icons?i=vue,javascript,vscode&theme=dark)](https://skillicons.dev)
 
-## 🖥️ Server
-
 [![Server Skills](https://skillicons.dev/icons?i=java,spring,idea&theme=dark)](https://skillicons.dev)
-
-## 🖥️ Common
 
 [![Common Skills](https://skillicons.dev/icons?i=notion,figma,git&theme=dark)](https://skillicons.dev)
 

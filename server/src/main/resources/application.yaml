@@ -38,3 +38,12 @@ spring:
       mode: always
       data-locations: classpath:data.sql
 
+  servlet:
+    multipart:
+      enabled: true         # 멀티파트 요청 활성화 (기본값: true)
+      file-size-threshold: 2KB  # 임시 파일을 디스크에 기록하기 위한 파일 크기 임계값
+      max-file-size: 10MB      # 단일 파일의 최대 크기
+      max-request-size: 20MB   # 요청 전체의 최대 크기
+
+file :
+  path : ./src/main/resources/attachedFiles

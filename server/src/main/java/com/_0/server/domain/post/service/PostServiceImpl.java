@@ -5,6 +5,7 @@ import com._0.server.domain.post.dto.PostListRes;
 import com._0.server.domain.post.entity.Post;
 import com._0.server.domain.post.repository.FileRepository;
 import com._0.server.domain.post.repository.PostRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class PostServiceImpl implements PostService {
 
     private final PostRepository postRepository;
@@ -41,5 +43,14 @@ public class PostServiceImpl implements PostService {
                 .build();
 
         return res;
+    }
+
+    @Override
+    public void removePost(Long postId) {
+
+        fileRepository.deleteAllByPostId(postId);
+
+        postRepository.deleteById(postId);
+
     }
 }

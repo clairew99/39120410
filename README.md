@@ -18,7 +18,7 @@ git clone [repo 주소]
 ```
 
 2. 서버 실행 : intelliJ 로 server 폴더 열고, run
-3. 클라이언트 실행 : vscode로 client 폴더 열가
+3. 클라이언트 실행 : vscode로 client 폴더 열기
 ```
 npm install
 npm run dev

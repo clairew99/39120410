@@ -7,38 +7,12 @@ export const usePostStore = defineStore('post', () => {
 
     const axios = inject('axios')
 
-    // send Notice    
-    // const sendNotice = (matchingUuid, notice) => { 
-    //     // console.log(notice)
-    //     axios.post(`/notice/create/apply/${matchingUuid}`, notice)
-    //     .then((response) => {
-    //         alert("알림 전송!")
-    //         })
-    //     .catch((error) => { 
-    //         console.log(error)
-    //     })   
-
-    // }
-
-    // const sendReturn = (matchingUuid, notice) => { 
-    //     axios.post(`/notice/create/return/${matchingUuid}`, notice)
-    //     .then((response) => {
-    //         alert("알림 전송!")
-    //         })
-    //     .catch((error) => { 
-    //         console.log(error)
-    //     })
-    // }
-    
-    // read totalNoticeList
-    // const postList = ref([])
-
     const postList = ref(
         
             [
               {
                 "id": 2,
-                "title": "두 번째 게시글",
+                "title": "개발자가 되고싶어요",
                 "file_exists": true,
                 "username": "user1",
                 "view_cnt": 25,
@@ -46,7 +20,7 @@ export const usePostStore = defineStore('post', () => {
               },
               {
                 "id": 1,
-                "title": "첫 번째 게시글",
+                "title": "Spring Security 정복하기",
                 "file_exists": true,
                 "username": "user1",
                 "view_cnt": 10,
@@ -54,7 +28,7 @@ export const usePostStore = defineStore('post', () => {
               },
               {
                 "id": 4,
-                "title": "네 번째 게시글",
+                "title": "Java가 어렵지만 도전해 볼게요",
                 "file_exists": false,
                 "username": "user2",
                 "view_cnt": 8,
@@ -62,7 +36,7 @@ export const usePostStore = defineStore('post', () => {
               },
               {
                 "id": 3,
-                "title": "세 번째 게시글",
+                "title": "Vue가 마음대로 안움직여요ㅠ",
                 "file_exists": true,
                 "username": "user2",
                 "view_cnt": 12,
@@ -70,7 +44,7 @@ export const usePostStore = defineStore('post', () => {
               },
               {
                 "id": 7,
-                "title": "일곱 번째 게시글",
+                "title": "AWS 자격증을 따보고 싶습니다.",
                 "file_exists": true,
                 "username": "user3",
                 "view_cnt": 19,
@@ -78,7 +52,7 @@ export const usePostStore = defineStore('post', () => {
               },
               {
                 "id": 6,
-                "title": "여섯 번째 게시글",
+                "title": "백엔드 개발자가 꿈이에요!",
                 "file_exists": false,
                 "username": "user3",
                 "view_cnt": 5,
@@ -86,7 +60,7 @@ export const usePostStore = defineStore('post', () => {
               },
               {
                 "id": 5,
-                "title": "다섯 번째 게시글",
+                "title": "사용자 경험을 우선시한 프론트엔드 개발자",
                 "file_exists": true,
                 "username": "user3",
                 "view_cnt": 33,
@@ -94,7 +68,7 @@ export const usePostStore = defineStore('post', () => {
               },
               {
                 "id": 10,
-                "title": "열 번째 게시글",
+                "title": "로그인 기능이 어렵네요. 그래도 도전!",
                 "file_exists": false,
                 "username": "user4",
                 "view_cnt": 9,
@@ -102,7 +76,7 @@ export const usePostStore = defineStore('post', () => {
               },
               {
                 "id": 9,
-                "title": "아홉 번째 게시글",
+                "title": "새해를 맞이하며",
                 "file_exists": true,
                 "username": "user4",
                 "view_cnt": 15,
@@ -110,7 +84,7 @@ export const usePostStore = defineStore('post', () => {
               },
               {
                 "id": 8,
-                "title": "여덟 번째 게시글",
+                "title": "중요한건 꺾여도 그냥 하는 마음",
                 "file_exists": true,
                 "username": "user4",
                 "view_cnt": 21,
@@ -118,7 +92,7 @@ export const usePostStore = defineStore('post', () => {
               },
               {
                 "id": 15,
-                "title": "열다섯 번째 게시글",
+                "title": "곧 2025년이네요",
                 "file_exists": false,
                 "username": "user5",
                 "view_cnt": 6,
@@ -126,7 +100,7 @@ export const usePostStore = defineStore('post', () => {
               },
               {
                 "id": 14,
-                "title": "열네 번째 게시글",
+                "title": "오늘 하루도 고생많으셨습니다.",
                 "file_exists": true,
                 "username": "user5",
                 "view_cnt": 7,
@@ -134,7 +108,7 @@ export const usePostStore = defineStore('post', () => {
               },
               {
                 "id": 13,
-                "title": "열세 번째 게시글",
+                "title": "꿈을 향해 한걸음",
                 "file_exists": false,
                 "username": "user5",
                 "view_cnt": 4,
@@ -142,7 +116,7 @@ export const usePostStore = defineStore('post', () => {
               },
               {
                 "id": 12,
-                "title": "열두 번째 게시글",
+                "title": "할 수 있다",
                 "file_exists": true,
                 "username": "user5",
                 "view_cnt": 17,
@@ -150,7 +124,7 @@ export const usePostStore = defineStore('post', () => {
               },
               {
                 "id": 11,
-                "title": "열한 번째 게시글",
+                "title": "어렵지만 오늘도 힘내봅니다.",
                 "file_exists": false,
                 "username": "user5",
                 "view_cnt": 11,
@@ -171,43 +145,8 @@ export const usePostStore = defineStore('post', () => {
             console.log(error)
         })
     }
-    
-    // // read noticeDetail
-    // const notice = ref({})
-    // const getNoticeDetail = (uuid) => {
-    //     axios.get(`/notice/detail/${uuid}`)
-    //         .then((response) => {
-    //             notice.value = response.data
-    //             console.log(notice.value)
-    //     })
-    // }
-
-    // // update notice read_status
-    // const readNotice = (uuid) => {
-    //     axios.put(`${VITE_SERVER_URL}/notice/read/${uuid}` )
-    //         .then(() => { 
-    //             getNoticeList()
-    //      })
-    // }
-
-    // // update notice process_status
-    // const processNotice = (uuid) => {
-    //     axios.put(`${VITE_SERVER_URL}/notice/process/${uuid}` )
-    //         .then(() => { 
-    //             getNoticeList()
-    //         })        
-    // }
-
-    // // delete notice
-    // const deleteNotice = (uuid) => { 
-    //     axios.delete(`/notice/${uuid}`)
-    //         .then(() => { 
-    //         getNoticeList()
-    //      })
-    // }
 
     return {
         postList, getPostList
-        // sendNotice, notice, getNoticeDetail, readNotice, deleteNotice, processNotice, sendReturn
     }
 })

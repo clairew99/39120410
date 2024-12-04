@@ -24,15 +24,11 @@ const headers = ref([
     <SearchHeader/>
     <v-data-table 
     :headers="headers"
-    :items="store.postList"
-    class="custom-table-header"></v-data-table>
+    :items="store.postList">
+    </v-data-table>
 </template>
 
 <style scoped>
-.custom-table-header .v-data-table-header {
-    background-color: #4caf50;  /* 원하는 배경색 지정 */
-    color: white;               /* 글자 색도 변경 가능 */
-}
     
 
 </style>

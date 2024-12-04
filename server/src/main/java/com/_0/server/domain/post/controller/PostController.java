@@ -1,6 +1,7 @@
 package com._0.server.domain.post.controller;
 
 import com._0.server.domain.post.dto.FileInfoDto;
+import com._0.server.domain.post.dto.PostDetailRes;
 import com._0.server.domain.post.dto.PostListRes;
 import com._0.server.domain.post.dto.RegistPostReq;
 import com._0.server.domain.post.entity.Post;
@@ -74,6 +75,14 @@ public class PostController {
     public ResponseEntity<PostListRes> getPost() {
 
         PostListRes res = postService.readPostList();
+
+        return new ResponseEntity<>(res, HttpStatus.OK);
+    }
+
+    @GetMapping("/{postId}")
+    public ResponseEntity<PostDetailRes> getPostDetail(@PathVariable Long postId){
+
+        PostDetailRes res = postService.readPostDetail(postId);
 
         return new ResponseEntity<>(res, HttpStatus.OK);
     }

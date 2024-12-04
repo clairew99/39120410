@@ -1,0 +1,49 @@
+server :
+  port : 80
+
+spring:
+  application:
+    name: SparkList
+
+  # H2 Database ??
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:sparklist   # H2 DB ?? ?? (In-Memory Mode)
+    username: sa        # H2 DB ?? ID (??? ??)
+    password:           # H2 DB ?? PW (??? ??)
+
+  # H2 Console ??
+  h2:
+    console: # H2 DB? ??? ??? ? ?? ??
+      enabled: true
+      settings:
+        web-allow-others: true
+      # H2 Console ?? ??
+      path: /h2-console       # H2 Console ?? ??
+
+  # JPA ??
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create        # DB ??? ?? (none, create, create-drop, update, validate)
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true      # ?? ?? ?? (??)
+        show_sql: true        # ?? ?? ??
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:data.sql
+
+  servlet:
+    multipart:
+      enabled: true         # 멀티파트 요청 활성화 (기본값: true)
+      file-size-threshold: 2KB  # 임시 파일을 디스크에 기록하기 위한 파일 크기 임계값
+      max-file-size: 10MB      # 단일 파일의 최대 크기
+      max-request-size: 20MB   # 요청 전체의 최대 크기
+
+file :
+  path : ./src/main/resources/attachedFiles

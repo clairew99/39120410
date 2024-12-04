@@ -1,15 +1,20 @@
 package com._0.server.domain.post.service;
 
+import com._0.server.domain.member.entity.Member;
+import com._0.server.domain.member.repository.MemberRepository;
 import com._0.server.domain.post.dto.PostListDetail;
 import com._0.server.domain.post.dto.PostListRes;
+import com._0.server.domain.post.dto.RegistPostReq;
 import com._0.server.domain.post.entity.Post;
 import com._0.server.domain.post.repository.FileRepository;
 import com._0.server.domain.post.repository.PostRepository;
+import com._0.server.global.exception.BusinessLogicException;
+import com._0.server.global.exception.ErrorCode;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -17,8 +22,25 @@ import java.util.List;
 @Transactional
 public class PostServiceImpl implements PostService {
 
+    private final MemberRepository memberRepository;
     private final PostRepository postRepository;
     private final FileRepository fileRepository;
+
+    @Override
+    public Post savePost(long memberId, RegistPostReq registPostReq) {
+
+        Member member = memberRepository.findById(memberId)
+                .orElseThrow(() -> new BusinessLogicException(ErrorCode.NOT_FOUND));
+
+        Post post = registPostReq.toPost(member, registPostReq);
+
+        return postRepository.save(post);
+    }
+
+    @Override
+    public void saveFiles(Post post, MultipartFile[] files) {
+
+    }
 
     @Override
     public PostListRes readPostList() {

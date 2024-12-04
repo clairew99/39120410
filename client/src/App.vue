@@ -14,7 +14,7 @@ import { RouterLink, RouterView } from 'vue-router'
 	height : 100%;
 }
 /* 모든 v-container에 테두리 추가 */
-div {
+/* div {
   border: 1px solid black;
-}
+} */
 </style>

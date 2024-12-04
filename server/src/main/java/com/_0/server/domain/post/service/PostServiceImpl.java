@@ -2,6 +2,7 @@ package com._0.server.domain.post.service;
 
 import com._0.server.domain.member.entity.Member;
 import com._0.server.domain.member.repository.MemberRepository;
+import com._0.server.domain.post.dto.PostDetailRes;
 import com._0.server.domain.post.dto.PostListDetail;
 import com._0.server.domain.post.dto.PostListRes;
 import com._0.server.domain.post.dto.RegistPostReq;
@@ -62,6 +63,23 @@ public class PostServiceImpl implements PostService {
 
         PostListRes res = PostListRes.builder()
                 .list(postListDetails)
+                .build();
+
+        return res;
+    }
+
+    @Override
+    public PostDetailRes readPostDetail(Long postId) {
+
+        Post post = postRepository.findById(postId)
+                .orElseThrow(() -> new BusinessLogicException(ErrorCode.NOT_FOUND));
+
+        PostDetailRes res = PostDetailRes.builder()
+                .title(post.getTitle())
+                .content(post.getContent())
+                .username(post.getMember().getUsername())
+                .viewCnt(post.getViewCnt())
+                .createdAt(post.getCreatedAt())
                 .build();
 
         return res;

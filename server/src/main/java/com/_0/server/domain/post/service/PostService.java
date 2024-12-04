@@ -1,5 +1,6 @@
 package com._0.server.domain.post.service;
 
+import com._0.server.domain.post.dto.PostDetailRes;
 import com._0.server.domain.post.dto.PostListRes;
 import com._0.server.domain.post.dto.RegistPostReq;
 import com._0.server.domain.post.entity.Post;
@@ -12,7 +13,10 @@ public interface PostService {
 
     PostListRes readPostList();
 
+    PostDetailRes readPostDetail(Long postId);
+
     void removePost(Long postId);
+
 
 
 }

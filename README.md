@@ -1,6 +1,7 @@
 # SparkList🔥
 SK m&amp;Service 개발 코딩테스트  
-당신의 열정 목록 게시판
+지원자 : 이은우 (01039120410)
+
 
 ## 기술 스택
 
@@ -11,6 +12,7 @@ SK m&amp;Service 개발 코딩테스트
 [![Common Skills](https://skillicons.dev/icons?i=notion,figma,git&theme=dark)](https://skillicons.dev)
 
 ## 화면 기획
+당신의 열정 목록 게시판이라는 주제로 기획했습니다.
 [figma](https://www.figma.com/design/4N1gUmFuPiJ0JYE6Awlvkn/SparkList?node-id=0-1&t=Jj3TGOhIuxNoZtrO-1)
 
 ## ERD

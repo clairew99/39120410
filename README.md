@@ -13,4 +13,14 @@ SK m&amp;Service 개발 코딩테스트
 
 ## 실행방법
 1. repository clone
-`git clone [repo 주소]`
+```
+git clone [repo 주소]
+```
+
+2. 서버 실행 : intelliJ 로 server 폴더 열고, run
+3. 클라이언트 실행 : vscode로 client 폴더 열가
+```
+npm install
+npm run dev
+```
+4. http://localhost:5173 으로 접속

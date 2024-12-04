@@ -23,12 +23,12 @@ public class Post {
 
     private String title;
 
-    private int view_cnt;
+    private int viewCnt;
 
     private String content;
 
-    private LocalDateTime created_at;
+    private LocalDateTime createdAt;
 
-    private LocalDateTime updated_at;
+    private LocalDateTime updatedAt;
 
 }

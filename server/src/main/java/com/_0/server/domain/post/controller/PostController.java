@@ -6,9 +6,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/post")
@@ -24,5 +22,13 @@ public class PostController {
         PostListRes res = postService.readPostList();
 
         return new ResponseEntity<>(res, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{postId}")
+    public ResponseEntity<?> deletePost(@PathVariable Long postId) {
+
+        postService.removePost(postId);
+
+        return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
     }
 }
